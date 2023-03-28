@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>big4numb</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="common_data.css">
+        <script>
+            var biggest_number=function btnsubmit(btnnum1,btnnum2,btnnum3,btnnum4)
+            {   alert("biggest number is:",btnnum1);
+                if(btnnum1>btnnum2)
+                {
+                    if(btnnum1>btnnum3){
+                        if(btnnum1>btnnum4){
+                            alert("biggest number is:",btnnum1);
+                        }
+                        else{
+                            return btnnum4;
+                        }
+                    }
+                }
+                else if(btnnum3>btnnum4)
+                        {   if(btnnum3>btnnum1){
+                                if(btnnum3>btnnum2){
+                                    return btnnum3;
+                                }
+                                else{
+                                    return btnnum2;
+                                }
+                            }
+                        }
+                else if(btnnum2>btnnum3)
+                {
+                    if(btnnum2>btnnum4)
+                    {
+                        if(btnnum2>btnnum1){ 
+                            return btnnum2;
+                        }
+                        else{
+                            return btnnum1;
+                        }
+                    }                     
+                }
+                else
+                {
+                    return btnnum4;
+                }
+            }
+            alert("Biggest number in",btnnum1,",",btnnum2,",",btnnum3,",",btnnum4,"is",biggest_number)                                         
+        </script>
+        <style>
+            table,tr,th,td{
+                border: 2px solid black;
+                background-color: rgba(233, 230, 230, 0.938);
+                    }
+
+            body{
+                background:linear-gradient(90deg,lightgreen,orange,lightblue,rgba(226, 154, 226, 0.534)) ;
+                }
+            .footer{
+                background-color: rgb(224, 222, 222);
+                border: 3px;
+                border-color: aliceblue;
+                height: inherit;
+                width: inherit;
+                padding: 20px;
+                    }
+            .header{
+                text-align: center;
+                padding: 20px;
+                background-color: rgb(226, 220, 220);
+                border: 3px;
+                border-color: aliceblue;
+                height: 90px;
+                width: inherit;
+                padding: 20px;
+                    }
+            .header:hover{
+                background-color: goldenrod;
+                         }
+            .search{
+                height: 12px;
+                width: 6px;
+                    }
+            .topnav{
+                background-color: rgb(207, 201, 193);
+                padding: 20px;
+                    }
+            .column_1{
+                background-color: inherit;
+                width: inherit;
+                    }
+            nav ul{
+                float:right;
+                  }
+            .search{
+                float:left;
+                    }
+            nav li{
+                display:inline-block;
+                list-style: none;
+                    }
+            
+            nav li a{
+                font-size:18px;
+                text-transform: uppercase;
+                padding:0px 30px;
+                color:rgb(36, 34, 34);
+                text-decoration: none;
+                    }
+            
+            nav li a:hover{
+                color:aquamarine;
+                transition:all 1s ease 0s;
+                    }
+            .context-items img{
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                            }
+            nav p{
+                font-size: 16px;
+                color: black;
+                width:60%;
+                height: inherit;
+                }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <form method="GET">
+        {% csrf_token %}
+            <h2 align="center">Biggest number in 4</h2>
+            <script src="" async defer></script>
+            <table align="center">
+                <tr>
+                    <td>Num-1</td>
+                    <td><input name="btnnum1" placeholder="Enter first Number"></td>
+                </tr>
+                <tr>
+                    <td>Num-2</td>
+                    <td><input name="btnnum2" placeholder="Enter second Number"></td>
+                </tr>
+                <tr>
+                    <td>Num-3</td>
+                    <td><input name="btnnum3" placeholder="Enter third Number"></td>
+                </tr>
+                <tr>
+                    <td>Num-4</td>
+                    <td><input name="btnnum4" placeholder="Enter fourth Number"></td>
+                </tr>
+            </table>
+            <tr>
+                <button name="btnsubmit" onclick="btnsubmit(btnnum1,btnnum2,btnnum3,btnnum4)">Click here to sumbit</button>
+            </tr>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

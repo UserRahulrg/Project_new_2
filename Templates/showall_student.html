@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showall student</title>
+    <style>
+        table,tr,th,td{
+            border: 2px solid black;
+            background-color: rgba(233, 230, 230, 0.938);
+        }
+
+        body{
+            background:linear-gradient(90deg,lightgreen,orange,lightblue,rgba(226, 154, 226, 0.534)) ;
+        }
+        .footer{
+            background-color: rgb(224, 222, 222);
+            border: 3px;
+            border-color: aliceblue;
+            height: inherit;
+            width: inherit;
+            padding: 20px;
+        }
+        .header{
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(226, 220, 220);
+            border: 3px;
+            border-color: aliceblue;
+            height: 90px;
+            width: inherit;
+            padding: 20px;
+        }
+        .header:hover{
+            background-color: goldenrod;
+        }
+        .search{
+            height: 12px;
+            width: 6px;
+        }
+        .topnav{
+            background-color: rgb(207, 201, 193);
+            padding: 20px;
+        }
+        .column_1{
+            background-color: inherit;
+            width: inherit;
+        }
+        nav ul{
+            float:right;
+        }
+        .search{
+            float:left;
+        }
+        nav li{
+            display:inline-block;
+            list-style: none;
+        }
+        nav li a{
+            font-size:18px;
+            text-transform: uppercase;
+            padding:0px 30px;
+            color:rgb(36, 34, 34);
+            text-decoration: none;
+        }
+        nav li a:hover{
+            color:aquamarine;
+            transition:all 1s ease 0s;
+        }
+        .context-items img{
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        nav p{
+            font-size: 16px;
+            color: black;
+            width:60%;
+            height: inherit;
+        }
+
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+
+        <nav>
+            <div class="header">
+                <tr>
+                    <td class="search" ><a >Search<input type="search" placeholder="Search a keyword here:"></a></td>
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000/newprojectapp/home/">Home</a></li>
+                        <li><a href="http://127.0.0.1:8000/newprojectapp/addstudent/">Add Student</a></li>
+                        <li><a href="http://127.0.0.1:8000/newprojectapp/searchstudent/">Search Student</a></li>
+                        <li><a href="http://127.0.0.1:8000/newprojectapp/modifystudent/">Modify Student</a></li>
+                        <li><a href="http://127.0.0.1:8000/newprojectapp/deletestudent/">Delete Student</a></li>
+                        <li><a href="http://127.0.0.1:8000/newprojectapp/showallstudent/">Showall Student</a></li>
+                    </ul>
+                </tr>
+            </div>
+        </nav>
+
+        <h3>Showall student</h3>
+        <table border="3px">
+            <tr>
+                <button name="btnshowall">Click here to show all students data</button>
+            </tr>
+            <tr>
+                <td>Userid</td>
+                <td>Name</td>
+                <td>Course</td>
+                <td>Branch</td>
+                <td>Rollno</td>
+                <td>Batch</td>
+            </tr>
+            {% for stu in Student %}
+            <tr>
+                <td>{{stu.userid}}</td>
+                <td>{{stu.name}}</td>
+                <td>{{stu.course}}</td>
+                <td>{{stu.branch}}</td>
+                <td>{{stu.rollno}}</td>
+                <td>{{stu.batch}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h3>Menu</h3>
+        <h4>Navigation to other Pages</h4>
+        <table border="3px">
+            <tr>
+                <th>
+                    <td>Add student</td>
+                    <td><a href="http://127.0.0.1:8000/newprojectapp/addstudent/">Click here to add student</a></td>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <td>Search student</td>
+                    <td><a href="http://127.0.0.1:8000/newprojectapp/searchstudent/">Click here to search student</a></td>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <td>Modify student</td>
+                    <td><a href="http://127.0.0.1:8000/newprojectapp/modifystudent/">Click here to modify student</a></td>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <td>Show all the student</td>
+                    <td><a href="http://127.0.0.1:8000/newprojectapp/showallstudent/">Click here to show all the student</a></td>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <td>Delete student</td>
+                    <td><a href="http://127.0.0.1:8000/newprojectapp/deletestudent/">Click here to delete student</a></td>
+                </th>
+            </tr>
+        </table>
+        <div class="footer">
+            <th align="left">
+                <nav>
+                    <p>Hello everyone,you can do following things in this page</p>
+                    <p>Search student from current databases</p>
+                    <p>Modify student database entry if student avaiable</p>
+                    <p>Showall all the data of student</p>
+                    <p>Delete data of the student</p>
+                </nav>
+            </th>
+        </div>
+    </form>
+</body>

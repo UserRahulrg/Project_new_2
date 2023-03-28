@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        table,tr,th,td{
+            border: 2px solid black;
+            background-color: rgba(233, 230, 230, 0.938);
+        }
+
+        body{
+            background:linear-gradient(90deg,lightgreen,orange,lightblue,rgba(226, 154, 226, 0.534)) ;
+        }
+    </style>
+    <script>
+    function btn_add(){    
+        var no1=document.getElementById('txtnum1');
+        var no2=document.getElementById('txtnum2');
+        var result=document.getElementById('txtresult');
+        var value_no1=parseInt(no1.value);
+        var value_no2=parseInt(no2.value);
+        result.value=res;
+    }
+    </script>
+</head>
+<body>
+    <table border="3px" align="center">
+        <h3 align="center">Simple calculator</h3>
+        <tr>
+            <td>Number-1</td>
+            <td><input id="txtnum1" name="txtnum1"></td>
+        </tr>
+        <tr>
+            <td>Number-2</td>
+            <td><input id="txtnum2" name="txtnum2"></td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td><input id="txtresult" name="txtresult"></td>
+        </tr>
+        <tr>
+            <td><button name="btn_add" on_click="btn_add()">+</button></td>
+            <td><button name="txtminus">-</button></td>
+            <td><button name="txtmultiply">*</button></td>
+            <td><button name="txtdivide">/</button></td>
+        </tr>
+    </table>
+</body>
+
+
+
+
+

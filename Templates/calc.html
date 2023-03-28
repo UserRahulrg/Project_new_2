@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        table,tr,th,td{
+            border: 2px solid black;
+            background-color: rgba(233, 230, 230, 0.938);
+        }
+
+        body{
+            background:linear-gradient(90deg,lightgreen,orange,lightblue,rgba(226, 154, 226, 0.534)) ;
+        }
+    </style>
+</head>
+<body>
+    <script >
+        function btnPlus_Click(){
+            var no1=document.getElementById('txtNo1');
+            var no2=document.getElementById('txtNo2');
+            var result=document.getElementById('txtResult');
+            var value_no1= parseInt( no1.value);
+            var value_no2=parseInt( no2.value);
+            var res= sum(value_no1,value_no2);
+            result.value=res;
+            }
+    </script>
+    <table>
+        <tr>
+            <td colspan="2"><label for="txtNo1">No1</label></td>
+            <td colspan="2"><input type="text" name="txtNo1" id="txtNo1"></td>
+        </tr>
+        <tr>
+            <td  colspan="2"><label for="txtNo2">No2</label></td>
+            <td  colspan="2"><input type="text" name="txtNo2" id="txtNo2"></td>
+        </tr>
+        <tr>
+            <td  colspan="2"><label for="txtResult">Result</label></td>
+            <td  colspan="2"><input type="text" name="txtResult" id="txtResult"></td>
+        </tr>
+        <tr>
+            <td ><input type="button" onclick="btnPlus_Click()" value="+"></td>
+            <td><input type="button" value="-"></td>
+            <td><input type="button" value="*"></td>
+            <td><input type="button" value="/"></td>
+        </tr>
+    </table>
+</body>
+
+
+
